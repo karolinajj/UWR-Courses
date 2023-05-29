@@ -1,0 +1,30 @@
+#Karolina Jędraszek
+#lista 10, zadanie 2
+#ruby 3.2.2
+
+load 'Kolekcja.arb'
+
+kolekcja = Kolekcja.new
+kolekcja.dodaj_element(3)
+kolekcja.dodaj_element(7)
+kolekcja.dodaj_element(1)
+kolekcja.dodaj_element(0)
+kolekcja.dodaj_element(5)
+
+#Uwagi: jeśli wyszukiwany element jest w kolekcji metody zwracją ich indeks, wpp wartość nil
+
+puts "Wyszukiwanie binarne:"
+puts "Element 0: #{Wyszukiwanie.binarne(kolekcja, 0)}"
+puts "Element 1: #{Wyszukiwanie.binarne(kolekcja, 1)}"
+puts "Element 2: #{Wyszukiwanie.binarne(kolekcja, 2)}"
+puts "Element 3: #{Wyszukiwanie.binarne(kolekcja, 3)}"
+
+puts "Wyszukiwanie interpolacyjne:"
+puts "Element 4: #{Wyszukiwanie.interpolacyjne(kolekcja, 4)}"
+puts "Element 5: #{Wyszukiwanie.interpolacyjne(kolekcja, 5)}"
+puts "Element 6: #{Wyszukiwanie.interpolacyjne(kolekcja, 6)}"
+puts "Element 7: #{Wyszukiwanie.interpolacyjne(kolekcja, 7)}"
+
+
+
+

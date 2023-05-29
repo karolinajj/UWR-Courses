@@ -1,0 +1,7 @@
+load 'Function.arb'
+
+f = Function.new { |x| x * x * Math.sin(x) }
+puts f.value(1)
+puts f.zero(-1,1, 0.0001)
+puts f.field(0,1)
+puts f.deriv(1)

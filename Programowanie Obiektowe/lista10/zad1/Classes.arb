@@ -1,0 +1,113 @@
+#Karolina Jędraszek
+#lista 10, zadanie 1
+#ruby 3.2.2
+
+class Node
+    attr_accessor :data, :prev_node, :next_node
+    def initialize(data = nil, prev_node = nil, next_node = nil) #double-linked list
+        @data = data
+        @prev_node = prev_node
+        @next_node = next_node
+    end
+end
+
+class Collection
+    attr_accessor :head
+    
+    def initialize
+      @head = nil
+      @tail = nil
+      @length = 0
+    end
+
+    def add(data)
+        new_node = Node.new(data)
+      
+        if @length == 0
+          @head = new_node
+          @tail = new_node
+        else
+          last_node = @tail
+          new_node.prev_node = last_node
+          last_node.next_node = new_node
+          @tail = new_node
+        end
+        @length += 1
+      end
+    
+    def length
+      @length
+    end
+  
+    def get(index)
+        return -1 if index >= @length || index < 0
+        current_node = @head
+        index.times do
+            if current_node.nil? 
+                return -1
+            else
+                current_node = current_node.next_node
+            end
+        end
+        if current_node.nil?
+            return -1
+        else 
+            return current_node.data
+        end
+    end
+
+    def swap(i, j) #only changes data leaving pre_node and next_node the same
+        return if i >= @length || j >= @length || i < 0 || j < 0 || i == j 
+      
+        i,j = j,i if i > j
+
+        node_i = @head
+        i.times do
+          node_i = node_i.next_node
+        end
+      
+        node_j = @head
+        j.times do
+          node_j = node_j.next_node
+        end
+      
+        if node_i && node_j #node_i and node_j are not nil
+            tmp = node_i.data
+            node_i.data = node_j.data
+            node_j.data = tmp
+        end
+    end
+end
+
+class Sorter
+    def self.sort1(collection) #bubble sort, O(n^2)
+      return collection if collection.length <= 1
+
+      for i in 0...(collection.length - 1) do
+        for j in 0...(collection.length - i - 1) do
+            if collection.get(j) > collection.get(j+1)
+                collection.swap(j, j+1)
+            end
+        end
+      end
+  
+      return collection
+    end
+
+    #bubble sort2 is slower as the inner loop is always form 0 to collection.length-2,
+    #whereas sort1 only swaps elements that have not been sorted yet
+    def self.sort2(collection) 
+        return collection if collection.length <= 1
+  
+        for i in 0...(collection.length - 1) do
+          for j in 0...(collection.length - 1) do
+              if collection.get(j) > collection.get(j+1)
+                  collection.swap(j, j+1)
+              end
+          end
+        end
+
+        return collection
+    end
+end
+  

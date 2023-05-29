@@ -1,0 +1,32 @@
+#Karolina Jędraszek
+#lista 10, zadanie 1
+#ruby 3.2.2
+
+load "Classes.arb"
+
+collection1 = Collection.new()
+collection2 = Collection.new()
+
+for i in 0...5 do
+    collection1.add(5-i)
+    collection2.add(5-i)
+end
+
+puts "Collection: "
+for i in 0...collection1.length do
+  print(collection1.get(i).to_s + " ")
+end
+
+puts "\nCollection sorted using sort1: "
+Sorter.sort1(collection1)
+for i in 0...collection1.length do
+  print(collection1.get(i).to_s + " ")
+end
+
+puts "\nCollection sorted using sort2: "
+Sorter.sort1(collection2)
+for i in 0...collection2.length do
+  print(collection2.get(i).to_s + " ")
+end
+
+

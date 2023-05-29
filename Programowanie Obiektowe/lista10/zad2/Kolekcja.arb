@@ -1,0 +1,114 @@
+#Karolina Jędraszek
+#lista 10, zadanie 2
+#ruby 3.2.2
+
+class Node 
+    attr_accessor :data, :prev_node, :next_node
+    
+    def initialize(data = nil, prev_node = nil, next_node = nil)
+      @data = data
+      @prev_node = prev_node
+      @next_node = next_node
+    end
+  end
+  
+  class Kolekcja
+    attr_accessor :head
+    
+    def initialize
+      @head = nil
+      @tail = nil
+      @length = 0
+    end
+    
+    def dodaj_element(data)
+      new_node = Node.new(data)
+  
+      if @length == 0
+        @head = new_node
+        @tail = new_node
+      else
+        current_node = @head
+  
+        while current_node != nil && current_node.data < data
+          current_node = current_node.next_node
+        end
+  
+        #ustawianie prev_node
+        if current_node == nil #kolekcja jest pusta
+          new_node.prev_node = @tail
+          @tail.next_node = new_node
+          @tail = new_node
+        elsif current_node.prev_node == nil
+          new_node.next_node = @head
+          @head.prev_node = new_node
+          @head = new_node
+        else
+          new_node.prev_node = current_node.prev_node
+          new_node.next_node = current_node
+          current_node.prev_node.next_node = new_node
+          current_node.prev_node = new_node
+        end
+      end
+      @length += 1
+    end
+    
+    def length
+      @length
+    end
+  
+    def get(index)
+      current_node = @head
+      current_index = 0
+  
+      while current_node != nil
+        if current_index == index
+          return current_node.data
+        end
+        
+        current_node = current_node.next_node
+        current_index += 1
+      end
+      return nil #nie znaleziono takiego indeksu
+    end
+  end
+  
+  class Wyszukiwanie
+    def self.binarne(kolekcja, element)
+      left = 0
+      right = kolekcja.length - 1
+  
+      while left <= right
+        mid = (left + right) / 2
+        mid_element = kolekcja.get(mid)
+  
+        if mid_element == element
+          return mid #zwracamy indeks
+        elsif mid_element < element
+          left = mid + 1
+        else
+          right = mid - 1
+        end
+      end
+      return nil #szukanego indeksu nie ma w kolekcji
+    end
+
+    def self.interpolacyjne(kolekcja, element)
+        left = 0
+        right = kolekcja.length - 1
+        
+        while left <= right && element >= kolekcja.get(left) && element <= kolekcja.get(right)
+            pos = left + ((element - kolekcja.get(left)) * (right - left)) / (kolekcja.get(right) - kolekcja.get(left))
+            
+            if kolekcja.get(pos) == element
+              return pos
+            elsif kolekcja.get(pos) < element
+              left = pos + 1
+            else
+              right = pos - 1
+            end
+          end
+          return nil #szukanego indeksu nie ma w kolekcji
+    end
+end
+  

@@ -1,0 +1,49 @@
+=begin
+Karolina Jędraszek
+lista 9 zad 1
+ruby 3.2.2
+=end
+
+class Function
+  def initialize(&block) #proc object
+    @func = block
+  end
+  
+  def value(x)
+    @func.call(x)
+  end
+  
+  def zero(a, b, e) #bisection method
+    s = (a + b) / 2.0
+    while (b - a).abs > e
+      if value(s) == 0.0
+        return s
+      end
+      if value(s) * value(a) < 0
+        b = s
+      else
+        a = s
+      end
+      s = (a + b) / 2.0
+    end
+    nill #no roots of a function
+  end
+  
+  def field(a, b)
+    n = 10000
+    h = (b - a) / n.to_f
+    sum = 0
+    
+    (1..n-1).each do |i|
+      x0 = a + (i-1)*h
+      x1 = a + i*h
+      sum += (value(x0) + value(x1)) * 0.5 * h
+    end
+    sum
+  end
+  
+  def deriv(x) #central difference formula
+    h = 0.0001
+    (value(x + h) - value(x - h)) / (2 * h)
+  end
+end
