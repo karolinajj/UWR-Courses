@@ -1,0 +1,15 @@
+C:\Users\karola\Desktop\studia\Program Obiektowe\projekt\obj\Debug\net7.0-windows\projekt.csproj.AssemblyReference.cache
+C:\Users\karola\Desktop\studia\Program Obiektowe\projekt\obj\Debug\net7.0-windows\projekt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\karola\Desktop\studia\Program Obiektowe\projekt\obj\Debug\net7.0-windows\projekt.AssemblyInfoInputs.cache
+C:\Users\karola\Desktop\studia\Program Obiektowe\projekt\obj\Debug\net7.0-windows\projekt.AssemblyInfo.cs
+C:\Users\karola\Desktop\studia\Program Obiektowe\projekt\obj\Debug\net7.0-windows\projekt.csproj.CoreCompileInputs.cache
+C:\Users\karola\Desktop\studia\Program Obiektowe\projekt\bin\Debug\net7.0-windows\projekt.exe
+C:\Users\karola\Desktop\studia\Program Obiektowe\projekt\bin\Debug\net7.0-windows\projekt.deps.json
+C:\Users\karola\Desktop\studia\Program Obiektowe\projekt\bin\Debug\net7.0-windows\projekt.runtimeconfig.json
+C:\Users\karola\Desktop\studia\Program Obiektowe\projekt\bin\Debug\net7.0-windows\projekt.dll
+C:\Users\karola\Desktop\studia\Program Obiektowe\projekt\bin\Debug\net7.0-windows\projekt.pdb
+C:\Users\karola\Desktop\studia\Program Obiektowe\projekt\obj\Debug\net7.0-windows\projekt.dll
+C:\Users\karola\Desktop\studia\Program Obiektowe\projekt\obj\Debug\net7.0-windows\refint\projekt.dll
+C:\Users\karola\Desktop\studia\Program Obiektowe\projekt\obj\Debug\net7.0-windows\projekt.pdb
+C:\Users\karola\Desktop\studia\Program Obiektowe\projekt\obj\Debug\net7.0-windows\projekt.genruntimeconfig.cache
+C:\Users\karola\Desktop\studia\Program Obiektowe\projekt\obj\Debug\net7.0-windows\ref\projekt.dll
