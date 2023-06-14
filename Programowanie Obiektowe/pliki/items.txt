@@ -1,3 +1,0 @@
-{"name":"Climbing Schoes","price":9.99}
-{"name":"Climbing Harness","price":12.99}
-{"name":"Chalk","price":2.89}

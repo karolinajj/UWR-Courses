@@ -1,8 +1,0 @@
-{"id":0,"name":"Anna","surname":"J","birthdate":{"day":12,"month":12,"year":2004}}
-{"id":1,"name":"Jan","surname":"Kowalski","birthdate":{"day":14,"month":10,"year":1976}}
-{"id":2,"name":"Ula","surname":"Nowak","birthdate":{"day":4,"month":3,"year":1999}}
-{"id":3,"name":"Janina","surname":"Bakalia","birthdate":{"day":12,"month":2,"year":2009}}
-{"id":4,"name":"Julian","surname":"Kropka","birthdate":{"day":3,"month":4,"year":2007}}
-{"id":5,"name":"Amelia","surname":"Walek","birthdate":{"day":5,"month":2,"year":2001}}
-{"id":6,"name":"Maciej","surname":"Porzeczka","birthdate":{"day":7,"month":3,"year":1990}}
-{"id":7,"name":"Ela","surname":"Sroka","birthdate":{"day":6,"month":6,"year":2004}}
