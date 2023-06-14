@@ -1,0 +1,3 @@
+{"isForClass":false,"isReduced":true,"name":"Pass","price":35}
+{"isForClass":false,"isReduced":false,"name":"Pass","price":37.99}
+{"isForClass":true,"isReduced":false,"name":"Pass","price":25.99}
