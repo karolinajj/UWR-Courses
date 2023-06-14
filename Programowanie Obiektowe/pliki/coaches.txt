@@ -1,0 +1,5 @@
+
+{"type":0,"id":0,"name":"Adam","surname":"Madejczyk","birthdate":{"day":13,"month":8,"year":1980}}
+{"type":2,"id":1,"name":"Jan","surname":"Krajewski","birthdate":{"day":15,"month":6,"year":1972}}
+{"type":1,"id":2,"name":"Emilia","surname":"Rotko","birthdate":{"day":7,"month":12,"year":2000}}
+{"type":2,"id":3,"name":"Julia","surname":"Opoka","birthdate":{"day":9,"month":4,"year":1978}}

@@ -1,0 +1,10 @@
+Korzystam z .NET 7.0
+
+Aby wyświetlić dokumentację należy otworzyć plik 'index' z folderu dokumentacja.
+Aby uruchomić program można skorzystać z komendy dotnet run.
+
+W plikach poeple.txt, coaches.txt, items.txt, passes.txt, classes.txt
+znajdują się przykładowe obiekty tych klas. 
+Np w pliku people.txt znajduje się lista osób w bazie ścianki wspinaczkowej.
+Do plików można dodawać obiekty (opcje 1-5 po uruchomeniu programu).
+Opcja 6 służy do obsługi klienta ścianki.
