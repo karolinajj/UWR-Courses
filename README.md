@@ -41,7 +41,6 @@
   
 - Probability Calculus and Statistics
   
-- Software Engeneering
   
 
 <h2> Semester 5 </h2>
