@@ -46,7 +46,7 @@ def main():
                 words_max_len = max(words_max_len, len(line))
 
     results = open('zad2_output.txt','w', encoding='utf-8')  
-    with open('pan_tadeusz_bez_spacji.txt', 'rb') as lines:
+    with open('zad2_input.txt', 'rb') as lines:
         for line in lines:
             line = line.decode('utf-8').strip()
             if line:
@@ -54,5 +54,6 @@ def main():
                 result = retract(line,dp,prev)
                 results.write(result)
                 results.write('\n')
+                # print(result)
     results.close()
 main()

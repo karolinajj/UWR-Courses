@@ -52,8 +52,8 @@ with open('zad4_input.txt', 'rb') as lines:
             bits, d = line.split(' ')
             d = int(d)
             result = opt_dist(bits, d)
-            results.write(str(result))
-            results.write('\n')
+            results.write(str(result) + '\n')
+            # results.write('\n')
 
 lines.close()
 results.close()

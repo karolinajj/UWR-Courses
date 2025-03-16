@@ -1,3 +1,5 @@
+# Idea: for each incorrect column / row
+# I correct the field which is the most optimal in this columne / row (based on opt_dist func)
 import numpy as np
 import random
 from opt_dist import opt_dist
@@ -44,6 +46,11 @@ def fix_row(row_index, tab, rows, cols_num):
             best_index = i
     
     tab[row_index][best_index] ^= 1
+    if random.randint(1, 100) == 1:
+        random_index = random.randint(0,cols_num - 1)
+        tab[row_index][random_index] ^= 1
+    else:
+        tab[row_index][best_index] ^= 1
     return tab
 
 
@@ -59,7 +66,11 @@ def fix_col(col_index, tab, cols, rows_num):
             best_score = new_score
             best_index = i
 
-    tab[best_index][col_index] ^= 1
+    if random.randint(1, 100) == 1:
+        random_index = random.randint(0,rows_num - 1)
+        tab[random_index][col_index] ^= 1
+    else:
+        tab[best_index][col_index] ^= 1
     return tab
     
 

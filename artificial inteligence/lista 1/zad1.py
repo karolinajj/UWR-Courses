@@ -2,7 +2,6 @@
 # We solve the problem using BFS.
 # New states are generated based on positions that can be reached from the current state (player whoes turn it is, pawns' positions).
 
-
 from collections import deque
 import sys
 
@@ -126,7 +125,6 @@ def draw_board(wk,wr,bk):
     for i, row in enumerate(board):
         print(f"{8 - i} {'  '.join(row)}")
     print("   a   b   c   d   e   f   g   h\n")
-
 
 
 def solve(input, output, mode=False):
