@@ -1,0 +1,142 @@
+/* wszystko*/
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #bfa5f8;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #161616;
+    font-size: clamp(0.6rem, 0.5vw + 0.6rem, 1rem);
+    overflow: auto;
+}
+
+.contact-form {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    align-items: center;
+    overflow: auto;
+    width: 60vw;
+    max-width: 600px;
+    min-width: 320px;
+    max-height: 80vh;
+}
+
+.contact-form__header {
+    font-size: 2rem;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 20px;
+    
+}
+
+.field-double {
+    display: flex;
+    gap: 1rem;
+}
+
+.field{
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+.field__input {
+    width: 100%;
+    height: 30px;
+    border-radius: 8px;
+    border: solid 2px rgb(214, 214, 214);
+}
+
+.field__label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.field__select {
+    width: 100%;
+    font-size: 1rem;
+    height: 30px;
+}
+
+input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+}
+
+
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #5c16ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+
+}
+
+button:hover {
+    background-color: #281f92;
+}
+
+label[for]:has(+ input:required)::after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+}
+
+label[for="message"]:has(+ textarea:required)::after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+}
+
+label[for="reason"]:has(+ select:required)::after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+}
+
+input:invalid, select:invalid {
+    border: 2px solid red;
+}
+
+textarea:invalid {
+    border: 2px solid red;
+}
+
+@media (pointer:coarse) {
+    input[type="checkbox"] {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-form {
+        background-color: rgb(255, 255, 255);
+        border-radius: 8px;
+        padding: 20px;
+        align-items: center;
+        width: 90%;
+        max-width: 400px;
+        max-height: 90vh;
+        margin: auto;
+    }
+
+    .field-double {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+  
+
+

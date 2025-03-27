@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" charset="UTF-8" content="width=device-width"/>
+    <title>Contact form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form class="contact-form">
+        <header class="contact-form__header">Contact Form</header>
+        <div class="field-double">
+            <div class="field">
+                <label class="field__label" for="name">First Name</label>
+                <input class="field__input"
+                    type="text"
+                    id="name"
+                    required
+                />
+            </div>
+
+            <div class="field">
+                <label class="field__label" for="surname">Surname</label>
+                <input class="field__input"
+                    type="text"
+                    id="surname"
+                />
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="field__label" for="email">Email</label>
+            <input class="field__input"
+                type="email"
+                id="email"
+                required
+                pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+            />
+        </div>
+
+        <div class="field">
+            <label class="field__label" for="phone">Phone</label>
+            <input class="field__input"
+                type="tel"
+                id="phone"
+                pattern="\d{9}" 
+            />
+        </div>
+
+        <div class="field">
+            <input class="field__input" type="checkbox" name="checkbox" id="checkbox"/>
+            <label class="field__label" for="checkbox">Join our newsletter</label>
+        </div>
+
+        <div class="field">
+            <label class="field__label" for="reason">Reason for Contact</label>
+                <select class="field__select" name="reason" id="reason" required>
+                    <option value="reason1">Reason1</option>
+                    <option value="reason2">Reason2</option>
+                    <option value="reason3">Reason3</option>
+                    <option value="reason4">Reason4</option>
+                </select>
+        </div>
+
+        <div class="field">
+            <label class="field__label" for="message">Your Message</label>
+            <textarea class="field__input" id="message" name="message" rows="3" cols="50" required></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+
+</body>
+</html>
