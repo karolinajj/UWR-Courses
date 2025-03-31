@@ -1,7 +1,6 @@
 package deck
 
 import cards._
-import scala.math.max
 import scala.io.Source
 import scala.util.Random.shuffle
 
@@ -9,7 +8,7 @@ class Deck(val cards: List[Card]) {
     //creates new deck without first card
     def pull(): Deck = {
         cards match {
-            case Nil => throw new IllegalStateException("Deck is empty")
+            case Nil => throw new IllegalStateException("Error! Deck is empty.")
             case x::xs => new Deck(xs)
         }
     }
@@ -27,8 +26,10 @@ class Deck(val cards: List[Card]) {
     }
 
     //amount of duplicates of the given card in the deck
-    def duplicatesOfCard(card: Card): Int = {
-        max(cards.count(_ == card) -1,0)
+    def duplicatesOfCard(c: Card): Int = {
+        val res = (for{ card <- cards; if card == c} yield 1).sum - 1
+        if (res > 0) res else 0
+
     }
 
     //amount of cards in the deck for the given color

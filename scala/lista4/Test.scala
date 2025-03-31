@@ -140,6 +140,5 @@ object Tests {
     testAll21()
     testFirst21()
     testPlay()
-    println("All tests completed!")
   }
 }

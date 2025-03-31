@@ -8,7 +8,8 @@ class Blackjack(deck: Deck) {
     // Numerical cards as their numerical value = 2 - 10.
     // Face cards (Jack, Queen, King) = 10
     // Ace = 1 or 11 (player could choose)
-    def calculatePoints(card: Card, currentPoints: Int): Int = card.rank match {
+    
+    def calculatePoints(card: Card, currentPoints: Int): Int = card.rank match { //we need currentPoints for ace
         case Numerical(value) => value
         case _: Face => 10
         case Ace => if (currentPoints + 11 <= 21) 11 else 1
@@ -45,7 +46,7 @@ class Blackjack(deck: Deck) {
     // finds and pretty-prints the first subsequence of cards which could give 21 points
     def first21(): Unit = {
         println("First subsequence of cards:")
-        all21.headOption match {
+        all21.headOption match { //headOption selects the first 21 elements
             case Some(cards) =>
                 cards.foreach(card => println(s"${card.color} ${card.rank}"))
                 println("Total points: 21")
@@ -57,7 +58,8 @@ class Blackjack(deck: Deck) {
 object Blackjack {
     // creates Blackjack game having numOfDecks-amount of standard decs with random order of cards. For example, with Blackjack(3) deck would have 156 cards
     def apply(numOfDecks: Int): Blackjack = {
-        val fullDeck = (1 to numOfDecks).flatMap(_ => Deck.standardDeck)
-        new Blackjack(new Deck(shuffle(fullDeck.toList)))
+        val fullDeck = (for { _ <- 1 to numOfDecks; card <- Deck.standardDeck } yield card).toList
+        new Blackjack(new Deck(shuffle(fullDeck)))
     }
+
 }
