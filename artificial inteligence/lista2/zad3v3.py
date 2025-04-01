@@ -112,6 +112,6 @@ def read(input):
 if __name__ == "__main__":
     walls, s_pos, e_pos = read("zad_input.txt")
     path = solve(walls, s_pos, e_pos)
-    #print("PATH LENGTH:",len(path),"(",path,")")
+    print("PATH LENGTH:",len(path),"(",path,")")
     with open("zad_output.txt", "w") as output:
             output.write(path + "\n")
