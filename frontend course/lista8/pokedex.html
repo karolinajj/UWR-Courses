@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokédex</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f2f2f2;
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+        color: #333;
+      }
+
+      .sidebar {
+        width: 280px;
+        background: linear-gradient(to bottom, #d62828, #f77f00);
+        color: white;
+        padding: 20px;
+        overflow-y: auto;
+        border-right: 3px solid #000;
+        flex-shrink: 0;
+      }
+
+      .sidebar h1 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .pokemon-list {
+        list-style: none;
+      }
+
+      .pokemon-list li {
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .pokemon-list li:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .main {
+        flex: 1;
+        padding: 30px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow-y: auto;
+      }
+
+      .loading-text,
+      .error-text {
+        font-size: 1em;
+        color: #666;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .pokemon-content {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      .pokemon-image {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+        object-fit: contain;
+      }
+
+      .types {
+        margin-bottom: 20px;
+      }
+
+      .type {
+        display: inline-block;
+        padding: 6px 12px;
+        background-color: #ddd;
+        border-radius: 20px;
+        margin: 3px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.9em;
+      }
+
+      .stats {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+        padding: 0 10px;
+      }
+
+      .stat {
+        display: flex;
+        justify-content: space-between;
+        margin: 6px 0;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .flavor-text {
+        font-style: italic;
+        text-align: center;
+        margin-bottom: 20px;
+        max-width: 400px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .error-text {
+        font-size: 1.2em;
+        color: red;
+        text-align: center;
+      }
+
+      .loading {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #ccc;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          flex-direction: column;
+        }
+
+        .sidebar {
+          width: 100%;
+          border-right: none;
+          border-bottom: 3px solid #000;
+          max-height: 300px;
+        }
+
+        .main {
+          padding: 20px 10px;
+        }
+
+        .pokemon-image {
+          width: 150px;
+          height: 150px;
+        }
+
+        .sidebar h1 {
+          font-size: 1.5em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h1>Pokédex</h1>
+      <ul id="pokemonList" class="pokemon-list">
+      </ul>
+    </div>
+
+    <div class="main">
+      <div id="loading" class="loading" style="display: none"></div>
+      <div id="errorText" class="error-text" style="display: none">
+        Failed to load Pokémon data.
+      </div>
+      <div id="pokemonDetails" class="pokemon-content" style="display: none">
+        <h2 id="pokemonName"></h2>
+        <img
+          id="pokemonImg"
+          class="pokemon-image"
+        />
+        <div id="pokemonTypes" class="types">
+          <span class="type"></span>
+        </div>
+        <div id="pokemonFlavorText" class="flavor-text"></div>
+        <div id="pokemonStats" class="stats"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
