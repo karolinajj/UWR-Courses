@@ -1,0 +1,14 @@
+/Users/karola/Desktop/poo1/lista5/bin/Debug/net9.0/lista5
+/Users/karola/Desktop/poo1/lista5/bin/Debug/net9.0/lista5.deps.json
+/Users/karola/Desktop/poo1/lista5/bin/Debug/net9.0/lista5.runtimeconfig.json
+/Users/karola/Desktop/poo1/lista5/bin/Debug/net9.0/lista5.dll
+/Users/karola/Desktop/poo1/lista5/bin/Debug/net9.0/lista5.pdb
+/Users/karola/Desktop/poo1/lista5/obj/Debug/net9.0/lista5.GeneratedMSBuildEditorConfig.editorconfig
+/Users/karola/Desktop/poo1/lista5/obj/Debug/net9.0/lista5.AssemblyInfoInputs.cache
+/Users/karola/Desktop/poo1/lista5/obj/Debug/net9.0/lista5.AssemblyInfo.cs
+/Users/karola/Desktop/poo1/lista5/obj/Debug/net9.0/lista5.csproj.CoreCompileInputs.cache
+/Users/karola/Desktop/poo1/lista5/obj/Debug/net9.0/lista5.dll
+/Users/karola/Desktop/poo1/lista5/obj/Debug/net9.0/refint/lista5.dll
+/Users/karola/Desktop/poo1/lista5/obj/Debug/net9.0/lista5.pdb
+/Users/karola/Desktop/poo1/lista5/obj/Debug/net9.0/lista5.genruntimeconfig.cache
+/Users/karola/Desktop/poo1/lista5/obj/Debug/net9.0/ref/lista5.dll
