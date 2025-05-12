@@ -3,9 +3,6 @@ import money.DSL._
 
 object Main extends App {
 
-  val test1 = 100(`€`) as PLN
-  println(test1)
-
   val sum1 = 100.01(USD) + 200(EUR)
   println(s"sum1 = $sum1") // in USD
 
@@ -27,12 +24,12 @@ object Main extends App {
   val conv1 = 150.01(USD) as PLN
   println(s"conv1 = $conv1")
 
-  val conv2 = 120.01(USD) as EUR
+  val conv2 = 120.01(USD) as `€`
   println(s"conv2 = $conv2")
 
-  val compare1 = 300.30(USD) > 200(EUR)
+  val compare1 = 300.30(USD) > 200(`€`)
   println(s"compare1 = $compare1")
 
-  val compare2 = 300.30(USD) < 200(EUR)
+  val compare2 = 300.30(`$`) < 200(EUR)
   println(s"compare2 = $compare2")
 }

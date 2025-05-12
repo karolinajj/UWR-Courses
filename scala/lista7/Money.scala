@@ -10,13 +10,7 @@ val `€`: Currency = EUR
 case object PLN extends Currency { val symbol = "zl" }
 val zl: Currency = PLN
 
-implicit val conversion : Currencyconversion = Currencyconversion(Map(
-  (EUR, USD) -> 1.08,
-  (EUR, PLN) -> 4.30,
-  (USD, PLN) -> 4.00,
-))
-
-case class Currencyconversion(conversion: Map[(Currency, Currency), BigDecimal]) {
+case class CurrencyConverter(conversion: Map[(Currency, Currency), BigDecimal]) {
   def convert(from: Currency, to: Currency): BigDecimal = {
     if (from == to) BigDecimal(1)
     else conversion.get((from, to)) match {
@@ -29,8 +23,16 @@ case class Currencyconversion(conversion: Map[(Currency, Currency), BigDecimal])
     }
   }
 }
+// CurrencyConverter instance can be automatically passed to functions and classes
+// that require an implicit CurrencyConverter as a parameter
+implicit val conversion : CurrencyConverter = CurrencyConverter(Map(
+  (EUR, USD) -> 1.12,
+  (EUR, PLN) -> 4.23,
+  (USD, PLN) -> 3.77,
+))
 
-case class Money(amount: BigDecimal, currency: Currency)(implicit conversion: Currencyconversion) {
+// automatically looking for an implicit CurrencyConverter
+case class Money(amount: BigDecimal, currency: Currency)(implicit conversion: CurrencyConverter) {
   def round(value: BigDecimal): BigDecimal = value.setScale(2, BigDecimal.RoundingMode.HALF_UP)
 
   def +(other: Money): Money = {
@@ -63,13 +65,22 @@ case class Money(amount: BigDecimal, currency: Currency)(implicit conversion: Cu
   override def toString: String = s"$amount ${currency.symbol}"
 }
 
-// Implicit Conversions for DSL Syntax
 object DSL {
-  implicit class RichNumber[A](val n: BigDecimal) extends AnyVal {
-    def apply(currency: Currency)(implicit conversion: Currencyconversion): Money =
+  implicit class RichNumber[A](val n: BigDecimal){
+    //allows this syntax: BigDecimal(10)(EUR)
+    def apply(currency: Currency)(implicit conversion: CurrencyConverter): Money =
       Money(n, currency)
   }
 
+  //Implicit Conversions
+  //helper functions because apply only works on BigDecimal values
+  //allow this syntax: 10(EUR)
   implicit def doubleToBigDecimal(d: Double): BigDecimal = BigDecimal(d)
   implicit def intToBigDecimal(i: Int): BigDecimal = BigDecimal(i)
 }
+
+// Steps:
+// 10 -> BigDecimal(10) by intToBigDecimal (implicit conversion)
+// wraps BigDecimal(10) into RichNumber
+// calls .apply(EUR) (implicit class) with converter found implicitly (implicit parameter)
+// result: Money(10, EUR)(converter)
